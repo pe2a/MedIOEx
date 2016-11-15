@@ -27,12 +27,14 @@
  * 1.5V gerilim dusumu de hesaba katilmalidir. 
  * 
  * Son guncel programi https://github.com/pe2a/MedIOEx adresinden indirebilirsiniz. 
+ * 
+ * bcm2835 son versionu aşağıdaki adreste bulunabilir 
+ * http://www.airspayce.com/mikem/bcm2835/
  *
  * compile:
  * gcc -std=gnu11 -o Ai_test Ai_test.c pmedex.c -lbcm2835
  *
- * bcm2835 son versionu aşağıdaki adreste bulunabilir 
- * http://www.airspayce.com/mikem/bcm2835/
+ *
  * 
  * Run:
  * ./Ai_test
