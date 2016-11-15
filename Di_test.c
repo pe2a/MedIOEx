@@ -1,4 +1,4 @@
-/* 
+/* Di_test.c
  * 16ch DIGITAL OUTPUT Test Program
  * J3 relay output 5A, 250V ; J4, J5, J6 transistor output 24VDC, 80mA.
  * (EN) MedIOEx is completely industrial Raspberry IO shield. Supply voltage is 24V. 
@@ -27,7 +27,7 @@
  * http://www.airspayce.com/mikem/bcm2835/
  * 
  * compile:
- *  gcc -std=gnu11 -o Do_test Di_test.c pmedex.c -lbcm2835
+ * gcc -o Di_test Di_test.c pmedex.c -lbcm2835 -std=gnu11
  * 
  * Run:
  * ./Di_test
@@ -49,16 +49,29 @@ int main(){
 	
 	for(;;){
 			
-	arr_diGPIO[0] = pe2a_DI_getVal(pe2a_GPIO_J14_J1);
-	arr_diGPIO[1] = pe2a_DI_getVal(pe2a_GPIO_J14_J2);
-	arr_diGPIO[2] = pe2a_DI_getVal(pe2a_GPIO_J14_J3);
-	arr_diGPIO[3] = pe2a_DI_getVal(pe2a_GPIO_J14_J4);
+	arr_diGPIO[0] = pe2a_DI_getVal(pe2a_GPIO_J14_16);
+	arr_diGPIO[1] = pe2a_DI_getVal(pe2a_GPIO_J14_15);
+	arr_diGPIO[2] = pe2a_DI_getVal(pe2a_GPIO_J14_14);
+	arr_diGPIO[3] = pe2a_DI_getVal(pe2a_GPIO_J14_13);
+	
+	arr_diGPIO[4] = pe2a_DI_getVal(pe2a_GPIO_J15_12);
+	arr_diGPIO[5] = pe2a_DI_getVal(pe2a_GPIO_J15_11);
+	arr_diGPIO[6] = pe2a_DI_getVal(pe2a_GPIO_J15_10);
+	arr_diGPIO[7] = pe2a_DI_getVal(pe2a_GPIO_J15_9);
+	
 
 
-	printf("pe2a_GPIO_J14_1 status : %d \n",arr_diGPIO[0]);
-	printf("pe2a_GPIO_J14_2 status : %d \n",arr_diGPIO[1]);
-	printf("pe2a_GPIO_J14_3 staus : %d \n",arr_diGPIO[2]);
-	printf("pe2a_GPIO_J14_4 staus : %d \n",arr_diGPIO[3]);
+	printf("pe2a_GPIO_J14_16 status : %d \n",arr_diGPIO[0]);
+	printf("pe2a_GPIO_J14_15 status : %d \n",arr_diGPIO[1]);
+	printf("pe2a_GPIO_J14_14 status : %d \n",arr_diGPIO[2]);
+	printf("pe2a_GPIO_J14_13 status : %d \n",arr_diGPIO[3]);
+	
+	
+	printf("pe2a_GPIO_J15_12 status : %d \n",arr_diGPIO[4]);
+	printf("pe2a_GPIO_J15_11 status : %d \n",arr_diGPIO[5]);
+	printf("pe2a_GPIO_J15_10 status : %d \n",arr_diGPIO[6]);
+	printf("pe2a_GPIO_J15_9 status : %d \n",arr_diGPIO[7]);
+
 	
 	printf("\n\n");
 	

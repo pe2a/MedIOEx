@@ -82,25 +82,25 @@ typedef enum e_do_pe2aGPIO{
 typedef enum e_di_pe2aGPIO{
 	
 	/*DIGITAL INPUT  */
- pe2a_GPIO_J17_J4 = 16, // <!> 24VDC <!> isolated transistor input 
- pe2a_GPIO_J17_J3 = 20, // <!> 24VDC <!> isolated transistor input 
- pe2a_GPIO_J17_J2 = 21, // <!> 24VDC <!> isolated transistor input 
- pe2a_GPIO_J17_J1 = 26, // <!> 24VDC <!> isolated transistor input 
+ pe2a_GPIO_J17_1 = 16, // <!> 24VDC <!> isolated transistor input 
+ pe2a_GPIO_J17_2 = 20, // <!> 24VDC <!> isolated transistor input 
+ pe2a_GPIO_J17_3 = 21, // <!> 24VDC <!> isolated transistor input 
+ pe2a_GPIO_J17_4 = 26, // <!> 24VDC <!> isolated transistor input 
 
- pe2a_GPIO_J16_J4 = 19, // <!> 24VDC <!> isolated transistor input 
- pe2a_GPIO_J16_J3 = 13, // <!> 24VDC <!> isolated transistor input 
- pe2a_GPIO_J16_J2 = 6,  // <!> 24VDC <!> isolated transistor input 
- pe2a_GPIO_J16_J1 = 5,  // <!> 24VDC <!> isolated transistor input 
+ pe2a_GPIO_J16_5 = 19, // <!> 24VDC <!> isolated transistor input 
+ pe2a_GPIO_J16_6 = 13, // <!> 24VDC <!> isolated transistor input 
+ pe2a_GPIO_J16_7 = 6,  // <!> 24VDC <!> isolated transistor input 
+ pe2a_GPIO_J16_8 = 5,  // <!> 24VDC <!> isolated transistor input 
 
- pe2a_GPIO_J15_J4 = 22, // <!> 24VDC <!> isolated transistor input 
- pe2a_GPIO_J15_J3 = 12, // <!> 24VDC <!> isolated transistor input 
- pe2a_GPIO_J15_J2 = 27, // <!> 24VDC <!> isolated transistor input 
- pe2a_GPIO_J15_J1 = 17, // <!> 24VDC <!> isolated transistor input 
+ pe2a_GPIO_J15_9 = 22, // <!> 24VDC <!> isolated transistor input 
+ pe2a_GPIO_J15_10 = 12, // <!> 24VDC <!> isolated transistor input 
+ pe2a_GPIO_J15_11 = 27, // <!> 24VDC <!> isolated transistor input 
+ pe2a_GPIO_J15_12 = 17, // <!> 24VDC <!> isolated transistor input 
 
- pe2a_GPIO_J14_J4 = 4,  // <!> 24VDC <!> isolated transistor input 
- pe2a_GPIO_J14_J3 = 23, // <!> 24VDC <!> isolated transistor input 
- pe2a_GPIO_J14_J2 = 24, // <!> 24VDC <!> isolated transistor input 
- pe2a_GPIO_J14_J1 = 18 // <!> 24VDC <!> isolated transistor input 
+ pe2a_GPIO_J14_13 = 4,  // <!> 24VDC <!> isolated transistor input 
+ pe2a_GPIO_J14_14 = 23, // <!> 24VDC <!> isolated transistor input 
+ pe2a_GPIO_J14_15 = 24, // <!> 24VDC <!> isolated transistor input 
+ pe2a_GPIO_J14_16 = 18 // <!> 24VDC <!> isolated transistor input 
 
 
 }DI_pe2aGPIO;

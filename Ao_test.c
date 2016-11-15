@@ -1,4 +1,4 @@
-/*
+/*Ao_test.c
  * 4ch 12 bit ANALOG OUTPUT Test Program
  * (EN) MedIOEx is completely industrial Raspberry IO shield. Supply voltage is 24V. 
  * (TR) MedIOEx endüstriyel Raspberry IO genişleme kartıdır. Giriş beslemesi 24V'dur. 
@@ -35,7 +35,7 @@
  * http://www.airspayce.com/mikem/bcm2835/
  * 
  * compile:
- * gcc -std=gnu11 -o Ao_test Ao_test.c pmedex.c -lbcm2835
+ * gcc -o Ao_test Ao_test.c pmedex.c -lbcm2835 -std=gnu11 
  * 
  * Run:
  * ./Ao_test

@@ -147,10 +147,10 @@ int pe2a_DO_DI_init()
 	 pe2a_DO_clear_bits(); //clear MCP23S17 GPIOs 
 
 	/*DIGITAL INPUT init decleration*/
-	static const int pe2a_GPIO_Arr_in[] = {  pe2a_GPIO_J14_J1 ,pe2a_GPIO_J14_J2 ,pe2a_GPIO_J14_J3 ,pe2a_GPIO_J14_J4,
-											 pe2a_GPIO_J15_J1 ,pe2a_GPIO_J15_J2 ,pe2a_GPIO_J15_J3 ,pe2a_GPIO_J15_J4,
-											 pe2a_GPIO_J16_J1 ,pe2a_GPIO_J16_J2 ,pe2a_GPIO_J16_J3 ,pe2a_GPIO_J16_J4,
-											 pe2a_GPIO_J17_J1 ,pe2a_GPIO_J17_J2 ,pe2a_GPIO_J17_J3 ,pe2a_GPIO_J17_J4 };
+	static const int pe2a_GPIO_Arr_in[] = {  pe2a_GPIO_J14_16 ,pe2a_GPIO_J14_15 ,pe2a_GPIO_J14_14 ,pe2a_GPIO_J14_13,
+											 pe2a_GPIO_J15_12 ,pe2a_GPIO_J15_11 ,pe2a_GPIO_J15_10 ,pe2a_GPIO_J15_9,
+											 pe2a_GPIO_J16_8 ,pe2a_GPIO_J16_7 ,pe2a_GPIO_J16_6 ,pe2a_GPIO_J16_5,
+											 pe2a_GPIO_J17_4 ,pe2a_GPIO_J17_3 ,pe2a_GPIO_J17_2 ,pe2a_GPIO_J17_1 };
 		
 	for(int i = 0; i < sizeof(pe2a_GPIO_Arr_in) / sizeof(pe2a_GPIO_Arr_in[0]);++i)
 	{	 

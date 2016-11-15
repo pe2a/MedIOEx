@@ -1,4 +1,4 @@
-/* 
+/* Do_test.c
  * 16ch DIGITAL OUTPUT Test Program
  * J3 relay output 5A, 250V ; J4, J5, J6 transistor output 24VDC, 80mA.
  * (EN) MedIOEx is completely industrial Raspberry IO shield. Supply voltage is 24V. 
@@ -33,7 +33,7 @@
  * http://www.airspayce.com/mikem/bcm2835/
  * 
  * compile:
- *  gcc -std=gnu11 -o Do_test Do_test.c pmedex.c -lbcm2835
+ *  gcc -o Do_test Do_test.c pmedex.c -lbcm2835 -std=gnu11
  * 
  * Run:
  * ./Do_test
