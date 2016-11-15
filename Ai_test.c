@@ -1,7 +1,7 @@
 /* 
  * 4ch 12 bit ANALOG INPUT Test Program
  * (EN) MedIOEx is completely industrial Raspberry IO shield. Supply voltage is 24V. 
- * (TR) MedIOEx endüstriyel Raspberr IO genişleme kartıdır. Giriş beslemesi 24'dur. 
+ * (TR) MedIOEx endüstriyel Raspberr IO genişleme kartıdır. Giriş beslemesi 24V'dur. 
  *
  * !EN
  * Requirements:
