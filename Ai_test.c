@@ -34,8 +34,6 @@
  * compile:
  * gcc -std=gnu11 -o Ai_test Ai_test.c pmedex.c -lbcm2835
  *
- *
- * 
  * Run:
  * ./Ai_test
  *

@@ -50,18 +50,18 @@
 int main(){
 	
 
-    pe2a_DO_DI_init(); //DO ve DI pinlerin gpio ayarlari bu fonksiyon ile yapiliyor
+    pe2a_DO_DI_init(); //DO and DI pins intialize
 
 	
 	for(;;){
 
 	//All DO_GPIO set HIGH position
-	pe2a_DO_setHigh(pe2a_GPIO_J3_1); //use SW2 to buzzer
+	pe2a_DO_setHigh(pe2a_GPIO_J3_1); 
 	pe2a_DO_setHigh(pe2a_GPIO_J3_2);
 	pe2a_DO_setHigh(pe2a_GPIO_J3_3);
 	pe2a_DO_setHigh(pe2a_GPIO_J3_4);
 	
-	pe2a_DO_setHigh(pe2a_GPIO_J4_1); //use SW2 to buzzer
+	pe2a_DO_setHigh(pe2a_GPIO_J4_1); //use SW2 for buzzer HIGH
 	pe2a_DO_setHigh(pe2a_GPIO_J4_2);
 	pe2a_DO_setHigh(pe2a_GPIO_J4_3);
 	pe2a_DO_setHigh(pe2a_GPIO_J4_4);
@@ -84,7 +84,7 @@ int main(){
 	pe2a_DO_setLow(pe2a_GPIO_J3_3);
 	pe2a_DO_setLow(pe2a_GPIO_J3_4);
 	
-	pe2a_DO_setLow(pe2a_GPIO_J4_1);
+	pe2a_DO_setLow(pe2a_GPIO_J4_1); //buzzer LOW
 	pe2a_DO_setLow(pe2a_GPIO_J4_2);
 	pe2a_DO_setLow(pe2a_GPIO_J4_3);
 	pe2a_DO_setLow(pe2a_GPIO_J4_4);
