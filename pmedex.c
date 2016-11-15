@@ -7,10 +7,10 @@
  * 4ch 12 bit analog input   : via max11627 
  * 4ch 12 bit analog output  : via dac124s085
  * 16ch 24VDC digital output : via msp23s17
- * 16ch 24VDC digital input  : directly connect rpi pins
+ * 16ch 24VDC digital input  : directly connect RPI pins
  * VERSION 1.0 
  * The basic library provides to use digital and analog pins on MedIOEx. 
- *  
+ * It is tested on Raspberry2 B, Raspberry2 B+ and Raspberry 3. 
  *
  * Copyright (C) 2016 Polly Electronics & Automation
  * If you have any troubles on MedIoEx, please do no not hesiate to contact support@pe2a.com
