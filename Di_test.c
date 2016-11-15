@@ -66,6 +66,7 @@ int main(){
 	printf("pe2a_GPIO_J14_14 status : %d \n",arr_diGPIO[2]);
 	printf("pe2a_GPIO_J14_13 status : %d \n",arr_diGPIO[3]);
 	
+	printf("\n\n");
 	
 	printf("pe2a_GPIO_J15_12 status : %d \n",arr_diGPIO[4]);
 	printf("pe2a_GPIO_J15_11 status : %d \n",arr_diGPIO[5]);
