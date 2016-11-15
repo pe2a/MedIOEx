@@ -1,17 +1,23 @@
 
-/*
- * author : yanikgo@itu.edu.tr
- * date   : 2016
- * 
+/* pmedex.h
+ * (EN) MedIOEx is completely industrial Raspberry IO shield. Supply voltage is 24V. 
+ * (TR) MedIOEx endüstriyel Raspberry IO genişleme kartıdır. Giriş beslemesi 24V'dur.
+ *
  * this library consist of->
  * 4ch 12 bit analog input   : via max11627 
  * 4ch 12 bit analog output  : via dac124s085
  * 16ch 24VDC digital output : via msp23s17
  * 16ch 24VDC digital input  : directly connect rpi pins
- *   // <3V digital input should be 0 //
+ * VERSION 1.0 
+ * The basic library provides to use digital and analog pins on MedIOEx. 
+ *  
+ *
+ * Copyright (C) 2016 Polly Electronics & Automation
+ * If you have any troubles on MedIoEx, please do no not hesiate to contact support@pe2a.com
  * */
 
  
+
  /*defines for pmedex , vd2440111 rpi IO expander card*/
  #ifndef PMEDEX_H
  #define PMEDEX_H
