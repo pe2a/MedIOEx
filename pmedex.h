@@ -81,7 +81,7 @@ typedef enum e_do_pe2aGPIO{
 
 typedef enum e_di_pe2aGPIO{
 	
-	/*DIGITAL INPUT  */
+/*DIGITAL INPUT  */
  pe2a_GPIO_J17_1 = 16, // <!> 24VDC <!> isolated transistor input 
  pe2a_GPIO_J17_2 = 20, // <!> 24VDC <!> isolated transistor input 
  pe2a_GPIO_J17_3 = 21, // <!> 24VDC <!> isolated transistor input 
