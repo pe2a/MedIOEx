@@ -55,13 +55,13 @@ int main(){
 	
 	printf("\n\n");
 	
-	printf("ch0__J13_1 : %d \n",pe2a_AI_getVal(pe2a_GPIO_J13_1));//24v sense,use SW2
+	printf("ch0__J13_1 : %d \n",pe2a_AI_getVal(pe2a_GPIO_J13_1));
 	delay(100);
 	printf("ch0__J13_2 : %d \n",pe2a_AI_getVal(pe2a_GPIO_J13_2));
 	delay(100);
 	printf("ch0__J13_3 : %d \n",pe2a_AI_getVal(pe2a_GPIO_J13_3));
 	delay(100);
-	printf("ch0__J13_4 : %d \n",pe2a_AI_getVal(pe2a_GPIO_J13_4));
+	printf("ch0__J13_4 : %d \n",pe2a_AI_getVal(pe2a_GPIO_J13_4)); //24v sense,use SW2
 	
 	delay(1000);
 	printf("\n\n");
