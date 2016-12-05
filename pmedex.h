@@ -19,8 +19,8 @@
  
 
  /*defines for pmedex , vd2440111 rpi IO expander card*/
- #ifndef PMEDEX_H
- #define PMEDEX_H
+#ifndef PMEDEX_H
+#define PMEDEX_H
  
 #include <stdio.h>
 #include <bcm2835.h>
@@ -47,10 +47,11 @@ static char AO_rbuf1[2] = {0};
 /*pe2a SPI Clock */
 #define pe2a_SPI_Clock_1024 1024 //244kHz
 
-
-
 #define pe2a_GPIO_AI_CS3 25  //analog input SPI chip select
 #define pe2a_GPIO_DO_CS1 7   //digital output SPI chip select
+
+//lm75bd temperature sensor 
+#define pe2a_arr_temperature_size 2
 
 
 typedef enum e_do_pe2aGPIO{
@@ -81,7 +82,7 @@ typedef enum e_do_pe2aGPIO{
 
 typedef enum e_di_pe2aGPIO{
 	
-/*DIGITAL INPUT  */
+	/*DIGITAL INPUT  */
  pe2a_GPIO_J17_1 = 16, // <!> 24VDC <!> isolated transistor input 
  pe2a_GPIO_J17_2 = 20, // <!> 24VDC <!> isolated transistor input 
  pe2a_GPIO_J17_3 = 21, // <!> 24VDC <!> isolated transistor input 
@@ -125,6 +126,14 @@ typedef enum e_ao_pe2aGPIO{
 	pe2a_GPIO_J1_4,     // <!> 0 - 10V DC <!> analog output ch3, 
 }AO_pe2aGPIO;
 
+//lm75bd temperature sensor 
+typedef enum e_i2c_pe2aTemperature{
+
+	pe2a_NO_temp_ACTION,
+	pe2a_I2C_temp_BEGIN,
+	pe2a_I2C_temp_END
+
+}pe2aTemperature;
 
 
 //controlling DO bit as 1 
@@ -187,10 +196,7 @@ static char pe2a_AO_wrBits_firstArr(const int getVal);
 //transfer function for AO second array  
 
 static char pe2a_AO_wrBits_secArr(const int getVal);
-
 static void pe2a_AO_OP1OP2_choosing(const int val,char *ptr);
-
-
 static void pe2a_AO_ch_choosing(const int setVal, char *ptr);
 	
 	
@@ -205,11 +211,15 @@ static void pe2a_AO_ch_choosing(const int setVal, char *ptr);
 //}
 
 void pe2a_AO_writeVal(const int PIN,const int getVal);
-	
-
 int pe2a_AO_init();
 	
+//lm75bd temperature sensor init function. It must be declared when before starting to read temperature.
+int pe2a_getTemperature_init();
+//return value  = temperature
+double pe2a_getTemperature(const int getVal); 
+
 
 void pe2a_bcm2835_close();
+
 
 #endif //PMEDEX_H

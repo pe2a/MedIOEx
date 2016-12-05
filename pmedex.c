@@ -1,7 +1,7 @@
 
 /* pmedex.c
  * (EN) MedIOEx is completely industrial Raspberry IO shield. Supply voltage is 24V. 
- * (TR) MedIOEx endüstriyel Raspberry IO genişleme kartıdır. Giriş beslemesi 24V'dur.
+ * (TR) MedIOEx endustriyel Raspberry IO genisleme kartıdır. Giris beslemesi 24V'dur.
  *
  * this library consist of->
  * 4ch 12 bit analog input   : via max11627 
@@ -179,7 +179,7 @@ int pe2a_AI_init(){
     bcm2835_spi_setBitOrder(BCM2835_SPI_BIT_ORDER_MSBFIRST);      
     bcm2835_spi_setDataMode(BCM2835_SPI_MODE0);                   
     bcm2835_spi_setClockDivider(pe2a_SPI_Clock_1024); 
-	bcm2835_gpio_fsel(pe2a_GPIO_AI_CS3, BCM2835_GPIO_FSEL_OUTP); 
+    bcm2835_gpio_fsel(pe2a_GPIO_AI_CS3, BCM2835_GPIO_FSEL_OUTP); 
 }
 
 //AI bit shifting
@@ -194,11 +194,13 @@ static int pe2a_AI_getVal_cond1(const char *ptr)
 	
 	
 }
+
+
 //AI choosing channel
 static int pe2a_AI_getVal_cnv_choosing(const int PIN, char *ptr) 
 {
 
-
+	
 	
 	if(PIN < 0 || PIN > 3)
 	{
@@ -207,7 +209,7 @@ static int pe2a_AI_getVal_cnv_choosing(const int PIN, char *ptr)
 	
 	else if(PIN == pe2a_GPIO_J13_1)
 	{
-		ptr[0] = 0b10000100; //conversion
+		ptr[0] = 0b10000110; //conversion ch0 
 		ptr[1] = 0b01100000; //setup
 		ptr[2] = 0b00111100; //ave
 		
@@ -216,29 +218,30 @@ static int pe2a_AI_getVal_cnv_choosing(const int PIN, char *ptr)
 	
 	else if(PIN == pe2a_GPIO_J13_2)
 	{
-		ptr[0] = 0b10001100; //conversion ch1
-		ptr[1] = 0b01100000; //setup
-		ptr[2] = 0b00111100; //ave
-		return 0;
-	}
-	
-	else if(PIN == pe2a_GPIO_J13_3)
-	{
-		ptr[0] = 0b10010100; //conversion ch2
-		ptr[1] = 0b01100000; //setup
-		ptr[2] = 0b00111100; //ave
-		return 0;
-	}
-	
-	else if(PIN == pe2a_GPIO_J13_4)
-	{
-		ptr[0] = 0b10011100; //conversion ch3
+		ptr[0] = 0b10001110; //conversion ch1
 		ptr[1] = 0b01100000; //setup
 		ptr[2] = 0b00111100; //ave
 		
 		return 0;
 	}
-
+	
+	else if(PIN == pe2a_GPIO_J13_3)
+	{
+		ptr[0] = 0b10010110; //conversion ch2
+		ptr[1] = 0b01100000; //setup
+		ptr[2] = 0b00111100; //ave
+		
+		return 0;
+	}
+	
+	else if(PIN == pe2a_GPIO_J13_4)
+	{
+		ptr[0] = 0b10011110; //conversion ch3
+		ptr[1] = 0b01100000; //setup
+		ptr[2] = 0b00111100; //ave
+		
+		return 0;
+	}
 		
 	
 }
@@ -248,13 +251,13 @@ int pe2a_AI_getVal(const int PIN)
 {
 		 
 		 
-	char ai_tbuf[3],ai_rbuf[3];
-    
+    char ai_tbuf[3],ai_rbuf[3];
+   
     bcm2835_spi_setChipSelectPolarity(BCM2835_SPI_CS0, HIGH);   //analog output cs disabled
     bcm2835_spi_setChipSelectPolarity(BCM2835_SPI_CS1, HIGH);   //digital output cs disabled
    
 	
-	bcm2835_gpio_write(pe2a_GPIO_AI_CS3, LOW); //analog input chip select active
+    bcm2835_gpio_write(pe2a_GPIO_AI_CS3, LOW); //analog input chip select active
 	
 	
 	if(pe2a_AI_getVal_cnv_choosing(PIN,ai_tbuf) < 0)
@@ -263,7 +266,6 @@ int pe2a_AI_getVal(const int PIN)
 	{
 		bcm2835_spi_transfernb(ai_tbuf,ai_rbuf,sizeof(ai_tbuf));
 		return (int)pe2a_AI_getVal_cond1(ai_rbuf);
-		
 
 	}
 	
@@ -463,6 +465,50 @@ int pe2a_AO_init(){
 
 }
 
+int pe2a_getTemperature_init(){
+
+
+	if(!bcm2835_init()){
+
+	   printf("bcm2835_init failed. Are you running as root??\n");
+	   return 1;
+	}
+
+	if(!bcm2835_i2c_begin()){
+	
+	    //i2c port must be enabled. raspi-config is the easiest way. 
+	    printf("bcm2835_i2c_begin failed. Are you running as root??\n");
+	    return 1;
+	}
+
+
+}
+
+
+double pe2a_getTemperature(const int getVal){
+
+	char buf[pe2a_arr_temperature_size];
+	int data = 0;
+	double pe2a_temp = 0; //onboard temperature
+
+	if(getVal == pe2a_I2C_temp_END){
+		bcm2835_i2c_end();
+		return 0;
+		//if external i2c connects, please do not use !
+	}
+
+	if(getVal == pe2a_I2C_temp_BEGIN){
+
+		int addr = 0x48 | 0x00;	/* address of lm75bd sensor */	
+		bcm2835_i2c_setSlaveAddress(addr);
+		data = bcm2835_i2c_read(buf,sizeof(buf));
+		data = buf[0] << 3 | ((buf[1] >> 5) & 0x07);
+		pe2a_temp = (double)data / 8.0;		//last temperature information
+		return (double)pe2a_temp;
+
+	}
+	
+}
 
 void pe2a_bcm2835_close()
 {
