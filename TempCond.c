@@ -25,7 +25,7 @@ int main(){
 		pe2a_DO_setHigh(pe2a_GPIO_J4_2);
 		printf("pe2a_getTemperature(1) : %.2f \n",pe2a_getTemperature(1));
 	}
-	else if( pe2a_getTemperature(1) > MinTemp){
+	else if( pe2a_getTemperature(1) < MinTemp){
 
 		 printf("pe2a_getTemperature(1) : %.2f \n",pe2a_getTemperature(1));
 		 pe2a_DO_setHigh(pe2a_GPIO_J4_1);
