@@ -66,15 +66,15 @@ typedef enum e_do_pe2aGPIO{
 	pe2a_GPIO_J3_2,	    //relay output ch3, up to <!> 250V <!>
 	pe2a_GPIO_J3_1,	    //relay output ch4, up to <!> 250V <!>
 
- 	pe2a_GPIO_J6_4,    // <!> 24VDC <!> transistor output
-	pe2a_GPIO_J6_3,    // <!> 24VDC <!> transistor output
-	pe2a_GPIO_J6_2,    // <!> 24VDC <!> transistor output
-	pe2a_GPIO_J6_1,    // <!> 24VDC <!> transistor output
+ 	pe2a_GPIO_J6_8,    // <!> 24VDC <!> transistor output
+	pe2a_GPIO_J6_7,    // <!> 24VDC <!> transistor output
+	pe2a_GPIO_J6_6,    // <!> 24VDC <!> transistor output
+	pe2a_GPIO_J6_5,    // <!> 24VDC <!> transistor output
 	
- 	pe2a_GPIO_J5_4,    // <!> 24VDC <!> transistor output
-	pe2a_GPIO_J5_3,    // <!> 24VDC <!> transistor output
-	pe2a_GPIO_J5_2,    // <!> 24VDC <!> transistor output
-	pe2a_GPIO_J5_1     // <!> 24VDC <!> transistor output
+ 	pe2a_GPIO_J5_12,    // <!> 24VDC <!> transistor output
+	pe2a_GPIO_J5_11,    // <!> 24VDC <!> transistor output
+	pe2a_GPIO_J5_10,    // <!> 24VDC <!> transistor output
+	pe2a_GPIO_J5_9     // <!> 24VDC <!> transistor output
 
 
 }DO_pe2aGPIO;
