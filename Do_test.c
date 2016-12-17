@@ -37,7 +37,9 @@
  * 
  * Run:
  * ./Do_test
- *
+ * 
+ * update 15.12.16
+ * 
  * Copyright (C) 2016 Polly Electronics & Automation
  * If you have any troubles on MedIoEx, please do no not hesiate to contact support@pe2a.com
  * */
@@ -56,50 +58,55 @@ int main(){
 	for(;;){
 
 	//All DO_GPIO set HIGH position
+	
 	pe2a_DO_setHigh(pe2a_GPIO_J3_1); 
 	pe2a_DO_setHigh(pe2a_GPIO_J3_2);
 	pe2a_DO_setHigh(pe2a_GPIO_J3_3);
 	pe2a_DO_setHigh(pe2a_GPIO_J3_4);
 	
-	pe2a_DO_setHigh(pe2a_GPIO_J4_1); //use SW2 for buzzer HIGH
+	pe2a_DO_setHigh(pe2a_GPIO_J4_1); //sw2 for buzzer 
 	pe2a_DO_setHigh(pe2a_GPIO_J4_2);
 	pe2a_DO_setHigh(pe2a_GPIO_J4_3);
 	pe2a_DO_setHigh(pe2a_GPIO_J4_4);
+
+	pe2a_DO_setHigh(pe2a_GPIO_J5_5); 
+	pe2a_DO_setHigh(pe2a_GPIO_J5_6);
+	pe2a_DO_setHigh(pe2a_GPIO_J5_7);
+	pe2a_DO_setHigh(pe2a_GPIO_J5_8);
 	
-	pe2a_DO_setHigh(pe2a_GPIO_J5_1);
-	pe2a_DO_setHigh(pe2a_GPIO_J5_2);
-	pe2a_DO_setHigh(pe2a_GPIO_J5_3);
-	pe2a_DO_setHigh(pe2a_GPIO_J5_4);
+	pe2a_DO_setHigh(pe2a_GPIO_J6_9); 
+	pe2a_DO_setHigh(pe2a_GPIO_J6_10);
+	pe2a_DO_setHigh(pe2a_GPIO_J6_11);
+	pe2a_DO_setHigh(pe2a_GPIO_J6_12);
 	
-	pe2a_DO_setHigh(pe2a_GPIO_J6_1);
-	pe2a_DO_setHigh(pe2a_GPIO_J6_2);
-	pe2a_DO_setHigh(pe2a_GPIO_J6_3);
-	pe2a_DO_setHigh(pe2a_GPIO_J6_4);
 	
-	delay(100); //100ms
+	delay(1000); //1000ms
 	
 	//All DO_GPIO set LOW position
+
+		
 	pe2a_DO_setLow(pe2a_GPIO_J3_1);
 	pe2a_DO_setLow(pe2a_GPIO_J3_2);
 	pe2a_DO_setLow(pe2a_GPIO_J3_3);
 	pe2a_DO_setLow(pe2a_GPIO_J3_4);
 	
-	pe2a_DO_setLow(pe2a_GPIO_J4_1); //buzzer LOW
+	pe2a_DO_setLow(pe2a_GPIO_J4_1); 
 	pe2a_DO_setLow(pe2a_GPIO_J4_2);
 	pe2a_DO_setLow(pe2a_GPIO_J4_3);
 	pe2a_DO_setLow(pe2a_GPIO_J4_4);
 	
-	pe2a_DO_setLow(pe2a_GPIO_J5_1);
-	pe2a_DO_setLow(pe2a_GPIO_J5_2);
-	pe2a_DO_setLow(pe2a_GPIO_J5_3);
-	pe2a_DO_setLow(pe2a_GPIO_J5_4);
-		
-	pe2a_DO_setLow(pe2a_GPIO_J6_1);
-	pe2a_DO_setLow(pe2a_GPIO_J6_2);
-	pe2a_DO_setLow(pe2a_GPIO_J6_3);
-	pe2a_DO_setLow(pe2a_GPIO_J6_4);
+	pe2a_DO_setLow(pe2a_GPIO_J5_5);
+	pe2a_DO_setLow(pe2a_GPIO_J5_6);
+	pe2a_DO_setLow(pe2a_GPIO_J5_7);
+	pe2a_DO_setLow(pe2a_GPIO_J5_8);
 	
-	delay(100); //100ms
+	pe2a_DO_setLow(pe2a_GPIO_J6_9);
+	pe2a_DO_setLow(pe2a_GPIO_J6_10);
+	pe2a_DO_setLow(pe2a_GPIO_J6_11);
+	pe2a_DO_setLow(pe2a_GPIO_J6_12);
+	
+
+	delay(1000); //1000ms
 
 	}
 	

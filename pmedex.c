@@ -75,7 +75,7 @@ void pe2a_DO_setHigh(const int device)
 		
 		} 
 
-		else if(device >= pe2a_GPIO_J6_4){
+		else if(device >= pe2a_GPIO_J6_12){
 			setGPIOAorB = pe2a_mcp23s17_GPIOA;
 			pe2a_DO_getHigh(&set_DO_apin,device - (pe2a_GPIO_J3_1 + 1));     
 			pe2a_mcp23s17_tr(pe2a_mcp23s17_adr,set_DO_apin);
@@ -98,7 +98,7 @@ void pe2a_DO_setLow(const int device)
 		
 		} 
 		
-		else if(device >= pe2a_GPIO_J6_4){
+		else if(device >= pe2a_GPIO_J6_12){
 			setGPIOAorB = pe2a_mcp23s17_GPIOA;
 			pe2a_DO_getLow(&set_DO_apin,device - (pe2a_GPIO_J3_1 + 1));     
 			pe2a_mcp23s17_tr(pe2a_mcp23s17_adr,set_DO_apin);  
