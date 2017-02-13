@@ -1,5 +1,5 @@
-/* TempCond.c
- * Compile gcc -o TempCond TempCond.c -lbcm2835 pmedex.c -std=gnu11
+/* tempCond.c
+ * Compile gcc -o tempCond tempCond.c -lbcm2835 pmedex.c -std=gnu11
  * Copyright (C) 2016 Polly Electronics & Automation
  * If you have any troubles on MedIoEx, please do no not hesiate to contact support@pe2a.com
  * */
