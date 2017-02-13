@@ -7,8 +7,8 @@
 #include <stdio.h>
 #include "pmedex.h" /* you must have it in compile directory */
 #include <bcm2835.h>
-#define MinTemp 30
-#define MaxTemp 36
+#define MinTemp 25
+#define MaxTemp 28
 
 int main(){
 	
@@ -27,8 +27,9 @@ int main(){
 	}
 	else if( pe2a_getTemperature(1) < MinTemp){
 
-		 printf("pe2a_getTemperature(1) : %.2f \n",pe2a_getTemperature(1));
-		 pe2a_DO_setHigh(pe2a_GPIO_J4_3);
+		printf("pe2a_getTemperature(1) : %.2f \n",pe2a_getTemperature(1));
+		pe2a_DO_setHigh(pe2a_GPIO_J4_1);
+		pe2a_DO_setHigh(pe2a_GPIO_J4_2);
 
 	}
 	
