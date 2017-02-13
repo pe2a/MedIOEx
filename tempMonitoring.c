@@ -1,5 +1,5 @@
 /* TempMonitoring.c
- * Compile gcc -o TempMonitoring TempMonitoring.c -lbcm2835 pmedex.c -std=gnu11
+ * Compile gcc -o tempMonitoring tempMonitoring.c -lbcm2835 pmedex.c -std=gnu11
  * Basic Temperature Datalogger
  * Copyright (C) 2016 Polly Electronics & Automation
  * If you have any troubles on MedIoEx, please do no not hesiate to contact support@pe2a.com
