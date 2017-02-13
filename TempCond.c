@@ -21,16 +21,15 @@ int main(){
 	printf("pe2a_getTemperature(1) : %.2f \n",pe2a_getTemperature(1));
 
  	if ( pe2a_getTemperature(1) > MaxTemp){ //if temp. > Max. temp J4_1 and J4_2 will be activated 
+		printf("pe2a_getTemperature(1) : %.2f \n",pe2a_getTemperature(1));
 		pe2a_DO_setHigh(pe2a_GPIO_J4_1);
 		pe2a_DO_setHigh(pe2a_GPIO_J4_2);
-		printf("pe2a_getTemperature(1) : %.2f \n",pe2a_getTemperature(1));
 	}
+		
 	else if( pe2a_getTemperature(1) < MinTemp){
-
 		printf("pe2a_getTemperature(1) : %.2f \n",pe2a_getTemperature(1));
 		pe2a_DO_setHigh(pe2a_GPIO_J4_1);
 		pe2a_DO_setHigh(pe2a_GPIO_J4_2);
-
 	}
 	
 	delay(1000);
