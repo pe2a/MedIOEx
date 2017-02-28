@@ -1,6 +1,6 @@
 /* Di_test.c
- * 16ch DIGITAL OUTPUT Test Program
- * J3 relay output 5A, 250V ; J4, J5, J6 transistor output 24VDC, 80mA.
+ * 16ch DIGITAL INPUT Test Program
+ * 
  * (EN) MedIOEx is completely industrial Raspberry IO shield. Supply voltage is 24V. 
  * (TR) MedIOEx endüstriyel Raspberry IO genişleme kartıdır. Giriş beslemesi 24V'dur. 
  *
