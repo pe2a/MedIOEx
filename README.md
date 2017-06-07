@@ -1,37 +1,37 @@
 MEDIOEX is basically Raspberry shield. Even if Raspberry has been a popular worldwide hobby in the last decades, we have transformed it into an engine which could be utilized in industrial environments thanks to our rich experience in the heavy industry. This document contains application samples regarding the commissionning of the card. Detailed information on MEDIOEX is shared in this document. The student and engineers may utilize in industrial environments thanks to such information on Raspberry shared in this Document. 
 MEDIOEX contains the following features:
 
-16ch isolated Digital Input
+->16ch isolated Digital Input
 
-16ch Digital Output ( 4 ch 250V relay, 12 ch 24VDC transistor output)
+->16ch Digital Output ( 4 ch 250V relay, 12 ch 24VDC transistor output)
 
-4ch 12bit Analog Input  
+->4ch 12bit Analog Input  
 
-4ch 12bit Analog Output 
+->4ch 12bit Analog Output 
 
-Real time clock
+->Real time clock
 
-1ch Rs232
+->1ch Rs232
 
-1ch Rs485
+->1ch Rs485
 
-Including temperature sensor LM75bd
+->Including temperature sensor LM75bd
 
-i2c terminal output 
+->i2c terminal output 
 
 The below features should be added to the abovementioned features:
 
-64-bit quad-core ARMV8 processor.
+->64-bit quad-core ARMV8 processor.
 
-1.2GHz 1GB RAM.
+->1.2GHz 1GB RAM.
 
-WiFi - BCM43143.
+->WiFi - BCM43143.
 
-Bluetooth 4.1 (Bluetooth Low Energy - BLE)
+->Bluetooth 4.1 (Bluetooth Low Energy - BLE)
 
-4chUSB 2.
+->4chUSB 2.
 
-4ch Stereo and Composite video output
+->4ch Stereo and Composite video output
 
 Several tests have been performed on MEDIOX and raspberry so that the former and the latter could be utilized in industrial environments. You may perform the following test on Medioex and raspberry.
 
