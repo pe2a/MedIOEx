@@ -76,5 +76,6 @@ To run Digital Output Pins:
 		root@raspberrypi:/home/pi/MedIOEx_Example/MedIOEx# ./Do_test 
 		
 Initial Setup Video: https://vimeo.com/197692012
+
 Digital Output Video: https://vimeo.com/196781378 
 
