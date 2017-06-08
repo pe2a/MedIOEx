@@ -1,23 +1,23 @@
 MEDIOEX is basically Raspberry shield. Even if Raspberry has been a popular worldwide hobby in the last decades, we have transformed it into an engine which could be utilized in industrial environments thanks to our rich experience in the heavy industry. This document contains application samples regarding the commissionning of the card. Detailed information on MEDIOEX is shared in this document. The student and engineers may utilize in industrial environments thanks to such information on Raspberry shared in this Document. 
 MEDIOEX contains the following features:
 
-->16ch isolated Digital Input
+-><b>16ch isolated Digital Input</b>
 
-->16ch Digital Output ( 4 ch 250V relay, 12 ch 24VDC transistor output)
+-><b>16ch Digital Output ( 4 ch 250V relay, 12 ch 24VDC transistor output)</b>
 
-->4ch 12bit Analog Input  
+-><b>4ch 12bit Analog Input </b> 
 
-->4ch 12bit Analog Output 
+-><b>4ch 12bit Analog Output</b>  
 
-->Real time clock
+-><b>Real time clock</b> 
 
-->1ch Rs232
+-><b>1ch Rs232</b> 
 
-->1ch Rs485
+-><b>1ch Rs485</b> 
 
-->Including temperature sensor LM75bd
+-><b>>Including temperature sensor LM75bd</b> 
 
-->i2c terminal output 
+-><b>i2c terminal output </b> 
 
 The below features should be added to the abovementioned features:
 
@@ -33,13 +33,13 @@ The below features should be added to the abovementioned features:
 
 ->4ch Stereo and Composite video output
 
-Several tests have been performed on MEDIOX and raspberry so that the former and the latter could be utilized in industrial environments. You may perform the following test on Medioex and raspberry.
+Several tests have been performed on MEDIOX and raspberry so that the former and the latter could be utilized in industrial environments. You may perform the following test on MEDIOEX and RASPBERRY.
 
 #1 remote control IO from cloud,
 
 #2 Serial bus reading ex. energy analyzer etc.
 
-Even if the above scenario might seem very easy to occur, the realization of this scenario with PLC and industrial PC is very costly. You will have the chance to minimize the costs of the engines thanks to the utilization of Medioex and Raspberry. Consequently, you will be able to focus on software without having to deal with the hardware issues. 
+Even if the above scenario might seem very easy to occur, the realization of this scenario with PLC and Industrial PC is very costly. You will have the chance to minimize the costs of the engines thanks to the utilization of Medioex and Raspberry. Consequently, you will be able to focus on software without having to deal with the hardware issues. 
 
 MEDIOEX should powered with an external power supply of 24VDC. You can start Medioex through a connection between Medioex and J11 connecteur, as shown in the below picture or directly with a PC adapteur with a 24VDC.
 PE2A provides the consumers with MEDIOEX cards together with open sources software. The consumer may make modifications on the code of the open source software. You can have access to detailed information via the below link as to the code functions. 
@@ -52,7 +52,7 @@ C#: https://github.com/huseyint/MedIOExNET
 
 Node js: https://www.npmjs.com/package/node-red-contrib-medioex
 
-Mediox provides physical Digital-Analog Input/output with SPI communcation based circuits. You can even use serial port RS232 and RS485. The consumer may first install bcm2835.h library.
+Mediox provides physical Digital-Analog Input/output with SPI communcation based circuits. You can even use serial port RS232 and RS485. The consumer may first install "bcm2835.h" library.
 
               pi@raspberrypi:~ $ sudo su
               root@raspberrypi:/home/pi# mkdir medIOEx-Example
