@@ -1,47 +1,32 @@
-MEDIOEX is basically Raspberry shield. Even if Raspberry has been a popular worldwide hobby in the last decades, we have transformed it into an engine which could be utilized in industrial environments thanks to our rich experience in the heavy industry. This document contains application samples regarding the commissionning of the card. Detailed information on MEDIOEX is shared in this document. The student and engineers may utilize in industrial environments thanks to such information on Raspberry shared in this Document. 
+# MEDIOEX 
+MEDIOEX-V2 is basically Raspberry Pi shield and it is suitable Raspberry 2/3/4 and also Zero. Even if Raspberry has been a popular worldwide hobby in the last decades, we have transformed it into an engine which could be utilized in industrial environments thanks to our rich experience in the heavy industry. This document contains application samples regarding the commissionning of the card. Detailed information on MEDIOEX is shared in this document. The student and engineers may utilize in industrial environments thanks to such information on Raspberry Pi shared in this Document. 
+
 MEDIOEX contains the following features:
 
--><b>16ch isolated Digital Input</b>
+![Image of MedIOEx-V2](http://pe2a.com/MedIOEx/TR/images/pe2a_info.jpg)
 
--><b>16ch Digital Output ( 4 ch 250V relay, 12 ch 24VDC transistor output)</b>
+* 16ch isolated Digital Input
 
--><b>4ch 12bit Analog Input </b> 
+* 16ch Digital Output ( 4 ch 250V relay, 12 ch 24VDC transistor output)
 
--><b>4ch 12bit Analog Output</b>  
+* 4ch 12bit Analog Input 
 
--><b>Real time clock</b> 
+* Real time clock
 
--><b>1ch Rs232</b> 
+* Rs232 **OR** RS485 via D-SUB
 
--><b>1ch Rs485</b> 
+* Internal temperature sensor LM75bd
 
--><b>>Including temperature sensor LM75bd</b> 
+* External I2C terminal output 
 
--><b>i2c terminal output </b> 
+![Image of MedIOEx-V2](http://pe2a.com/images/medioex_1.jpg)
+*MEDIOEX-V2*
 
-The below features should be added to the abovementioned features:
+![Image of MedIOEx-V2](http://pe2a.com/images/medioex_2.jpg)
+*MEDIOEX-V2*
 
-->64-bit quad-core ARMV8 processor.
+**MEDIOEX-V2** should powered with an external power supply of 24VDC. You can start MEDIOEX through a connection between MEDIOEX and J11 connecteur, as shown in the below picture or directly with a PC adapteur with a 24VDC.
 
-->1.2GHz 1GB RAM.
-
-->WiFi - BCM43143.
-
-->Bluetooth 4.1 (Bluetooth Low Energy - BLE)
-
-->4chUSB 2.
-
-->4ch Stereo and Composite video output
-
-Several tests have been performed on MEDIOX and raspberry so that the former and the latter could be utilized in industrial environments. You may perform the following test on MEDIOEX and RASPBERRY.
-
-#1 remote control IO from cloud,
-
-#2 Serial bus reading ex. energy analyzer etc.
-
-Even if the above scenario might seem very easy to occur, the realization of this scenario with PLC and Industrial PC is very costly. You will have the chance to minimize the costs of the engines thanks to the utilization of Medioex and Raspberry. Consequently, you will be able to focus on software without having to deal with the hardware issues. 
-
-MEDIOEX should powered with an external power supply of 24VDC. You can start Medioex through a connection between Medioex and J11 connecteur, as shown in the below picture or directly with a PC adapteur with a 24VDC.
 PE2A provides the consumers with MEDIOEX cards together with open sources software. The consumer may make modifications on the code of the open source software. You can have access to detailed information via the below link as to the code functions. 
 
 C: https://github.com/pe2a/MedIOEx
@@ -52,9 +37,11 @@ C#: https://github.com/huseyint/MedIOExNET
 
 Node js: https://www.npmjs.com/package/node-red-contrib-medioex
 
-Mediox provides physical Digital-Analog Input/output with SPI communcation based circuits. You can even use serial port RS232 and RS485. The consumer may first install "bcm2835.h" library.
+MEDIOEX provides physical Digital-Analog Input based SPI. You can even use serial port RS232 and RS485. The consumer may first install "bcm2835.h" library if they aim to code in C programming language.
 
-              pi@raspberrypi:~ $ sudo su
+    
+```console
+   	      pi@raspberrypi:~ $ sudo su
               root@raspberrypi:/home/pi# mkdir medIOEx-Example
               root@raspberrypi:/home/pi# cd medIOEx-Example
               root@raspberrypi:/home/pi/MedIOEx_Example/MedIOEx# git clone git://github.com/pe2a/MedIOEx.git
@@ -66,6 +53,7 @@ Mediox provides physical Digital-Analog Input/output with SPI communcation based
               root@raspberrypi:/home/pi/MedIOEx_Example/MedIOEx/bcm2835-1.50# make check
               root@raspberrypi:/home/pi/MedIOEx_Example/MedIOEx/bcm2835-1.50# make install
               root@raspberrypi:/home/pi/MedIOEx_Example/MedIOEx# cd ..
+```
 
 For Digital Output Test:
 
@@ -78,4 +66,3 @@ To run Digital Output Pins:
 Initial Setup Video: https://vimeo.com/197692012
 
 Digital Output Video: https://vimeo.com/196781378 
-
