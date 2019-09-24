@@ -4,7 +4,7 @@
  * (TR) MedIOEx endüstriyel Raspberry IO genişleme kartıdır. Giriş beslemesi 24V'dur.
  *
  * this library consist of->
- * 4ch 12 bit analog input   : via max11627 
+ * 4ch 12 bit analog input   : via max11627 - NOT USED
  * 4ch 12 bit analog output  : via dac124s085
  * 16ch 24VDC digital output : via msp23s17
  * 16ch 24VDC digital input  : directly connect RPI pins
@@ -107,12 +107,13 @@ typedef enum e_di_pe2aGPIO{
 }DI_pe2aGPIO;
 
 
+//analog input pin number changed for medioex-v2
 typedef enum e_ai_pe2aGPIO{
 
  	pe2a_GPIO_J13_1 = 0, // <!> 0 - 10V DC <!> analog input ch0, no need resistor or external supply 
-	pe2a_GPIO_J13_2,     // <!> 0 - 10V DC <!> analog input ch1
-	pe2a_GPIO_J13_3,     // <!> 0 - 10V DC <!> analog input ch2
-	pe2a_GPIO_J13_4,     // <!> 0 - 10V DC <!> analog input ch3, use (24V sense -> SW2) switch to meas. power supply voltage
+	pe2a_GPIO_J13_2 = 1,     // <!> 0 - 10V DC <!> analog input ch1
+	pe2a_GPIO_J13_3 = 6,     // <!> 0 - 10V DC <!> analog input ch2
+	pe2a_GPIO_J13_4 = 7,     // <!> 0 - 10V DC <!> analog input ch3, use (24V sense -> SW2) switch to meas. power supply voltage
 
 }AI_pe2aGPIO;
 
@@ -168,13 +169,13 @@ int pe2a_DO_DI_init();
 /*Analog input max11627*/
 int pe2a_AI_init();
 
-//AI bit shifting
+//AI bit shifting NOT NEEDED FOR MEDIOEX V2
 static int pe2a_AI_getVal_cond1(const char *ptr);
 
-//AI choosing channel
+//AI choosing channel NOT NEEDED FOR MEDIOEX V2
 static int pe2a_AI_getVal_cnv_choosing(const int PIN, char *ptr) ;
 
-//return AI val as chosen channel 
+//return AI val as chosen channel  
 int pe2a_AI_getVal(const int PIN);
 
 

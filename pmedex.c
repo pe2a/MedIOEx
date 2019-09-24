@@ -4,15 +4,16 @@
  * (TR) MedIOEx endustriyel Raspberry IO genisleme kartıdır. Giris beslemesi 24V'dur.
  *
  * this library consist of->
- * 4ch 12 bit analog input   : via max11627 
- * 4ch 12 bit analog output  : via dac124s085
+ * 4ch 12 bit analog input   : via max11627 FOR MEDIOEX V1 -NOT USED
+ * 4ch 12 bit analog input 	 : via mcp3208 FOR MEDIOEX V2
+ * 4ch 12 bit analog output  : via dac124s085 IT IS NOT USED FOR MEDIOEX-V2
  * 16ch 24VDC digital output : via msp23s17
  * 16ch 24VDC digital input  : directly connect RPI pins
  * VERSION 1.0 
  * The basic library provides to use digital and analog pins on MedIOEx. 
  * It is tested on Raspberry2 B, Raspberry2 B+ and Raspberry 3. 
  *
- * Copyright (C) 2016 Polly Electronics & Automation
+ * Copyright (C) 2019 Polly Electronics & Automation
  * If you have any troubles on MedIoEx, please do no not hesiate to contact support@pe2a.com
  * */
 #include <stdio.h>
@@ -182,7 +183,7 @@ int pe2a_AI_init(){
     bcm2835_gpio_fsel(pe2a_GPIO_AI_CS3, BCM2835_GPIO_FSEL_OUTP); 
 }
 
-//AI bit shifting
+//AI bit shifting - NOT NEEDED FOR MEDIOEX V2
 static int pe2a_AI_getVal_cond1(const char *ptr)
 {
 	
@@ -196,7 +197,7 @@ static int pe2a_AI_getVal_cond1(const char *ptr)
 }
 
 
-//AI choosing channel
+//AI choosing channel -NOT NEEDED FOR MEDIOEX V2
 static int pe2a_AI_getVal_cnv_choosing(const int PIN, char *ptr) 
 {
 
@@ -246,8 +247,70 @@ static int pe2a_AI_getVal_cnv_choosing(const int PIN, char *ptr)
 	
 }
 
-//return AI val as chosen channel 
+//return AI val as chosen channel PLEASE INFORM US FOR MEDIOEX_V1
 int pe2a_AI_getVal(const int PIN)
+{
+		 
+		 
+    char tbuf[3]; //transmitting values to mcp3208
+    char rbuf[3]; //reading value from mcp3208
+    
+    int adc = 0;
+    int adcDigNumber = 0;
+    
+   
+    bcm2835_spi_setChipSelectPolarity(BCM2835_SPI_CS1, HIGH);   //digital output cs disabled
+    bcm2835_gpio_write(pe2a_GPIO_AI_CS3, LOW); //analog input chip select active
+	
+    
+    if(PIN == 0){
+        
+        //ch0
+        tbuf[0] = 0b00000110;
+        tbuf[1] = 0b00000000;
+        tbuf[2] = 0b00000000;
+        
+    }
+    else if(PIN == 1){
+        //ch1
+        tbuf[0] = 0b00000110;
+        tbuf[1] = 0b01000000;
+        tbuf[2] = 0b00000000;  
+    }
+                    
+    else if(PIN == 6){
+        
+        //ch6
+        tbuf[0] = 0b00000111;
+        tbuf[1] = 0b10000000;
+        tbuf[2] = 0b00000000;
+            
+    }
+    
+    else if(PIN == 7){
+        
+        //ch7
+        tbuf[0] = 0b00000111;
+        tbuf[1] = 0b11000000;
+        tbuf[2] = 0b00000000;
+        
+    }
+    
+    bcm2835_spi_transfernb(tbuf, rbuf,sizeof(tbuf));
+    adcDigNumber = (rbuf[1] << 8) + rbuf[2];
+    adcDigNumber &= 0xFFF;
+    
+    bcm2835_gpio_write(pe2a_GPIO_AI_CS3, HIGH); //analog input chip select active
+	
+    
+    return adcDigNumber; //should be 0 - 4095
+	
+
+	
+}
+
+//return AI val as chosen channel 
+int pe2a_AI_getVal_2(const int PIN)
 {
 		 
 		 
@@ -274,8 +337,6 @@ int pe2a_AI_getVal(const int PIN)
 
 	
 }
-
-
 
 
 /* Analog Output decleration DAC124S085*/ 
